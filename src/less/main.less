@@ -148,6 +148,59 @@ a {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+nav.toc {
+  display: none;
+}
+
+@media screen and (min-width: 1240px) {
+  // Reserve the left gutter for the sidebar and shift the 800px column right.
+  // The sidebar (160px) + gap (20px) + text column (800px) form a 980px unit
+  // centered as a whole: left edge at 50% - 490px, right edge at 50% + 490px.
+  body {
+    margin: 2em calc(50% - 490px) 2em calc(50% - 310px);
+  }
+
+  nav.toc {
+    display: block;
+    position: fixed;
+    top: 5em;
+    left: calc(50% - 490px);
+    width: 160px;
+
+    p.toc-title {
+      margin: 0 0 0.8em;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      font-size: 0.95em;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -212,6 +265,44 @@ p.st {
   margin-top: -1em;
 }
 
+p.summary {
+  max-width: none;
+}
+
+// Emphasis for key achievements in the summary (GPA, certs, user counts)
+span.hl {
+  font-weight: 600;
+}
+
+// Web equivalent of LaTeX's invisible text: not rendered visually,
+// but still selectable/copyable and visible in the page source.
+span.invisible-text {
+  color: transparent;
+  font-size: x-small;
+  margin: -1em 0;
+}
+
+h3.project-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  column-gap: 1em;
+
+  .project-date {
+    font-size: 0.8em;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+}
+
+p.project-meta {
+  font-size: 0.85em;
+  font-style: italic;
+  // Pull it closer to the heading above and the bullet list below
+  margin: -1em 0;
+}
+
 div.fancyPositioning {
   div.picture-left {
     float: left;
@@ -245,6 +336,39 @@ div.fancyPositioning {
   }
 }
 
+// Centered variant for the project showcase; the cat figure below keeps its original layout.
+div.fancyPositioning.it-today {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  // Flex items ignore `float`, so the columns center instead of hugging the left.
+  div.picture-left {
+    float: none;
+  }
+
+  div.tleft {
+    float: none;
+  }
+}
+
+p.see-erd {
+  margin: 1.5em 0 0;
+  text-align: center;
+
+  a {
+    font-size: 0.9em;
+  }
+}
+
+footer.template-credit {
+  margin-top: 3em;
+  text-align: center;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
 ul {
   li {
     img {
@@ -256,8 +380,8 @@ ul {
 blockquote {
   color: @blockQuoteColor;
   margin-left: 0;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  margin-top: -1em;
+  margin-bottom: 0em;
 
   span {
     float: left;

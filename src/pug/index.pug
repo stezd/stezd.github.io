@@ -3,9 +3,9 @@ html(lang="en")
  head
   meta(charset="utf-8")
   meta(name="theme-color" content="#ffffff")
-  title The Best Motherfucking Website
+  title Aldi Pramudya
   meta(name="viewport", content="width=device-width, initial-scale=1.0")
-  meta(name="description", content="The Best Motherfucking Website")
+  meta(name="description", content="Portofolio Aldi Pramudya")
   link(rel="stylesheet" type="text/css" href="../less/main.less")
   link(rel="stylesheet" type="text/css" href="~typeface-open-sans")
 
@@ -16,15 +16,65 @@ html(lang="en")
   link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
   link(rel='manifest' href='/site.webmanifest')
  body
-  h1 The #[i best] motherfucking website
-  p.st For real.
-  h2 Styling?
-  p 
-    | You probably build websites using vim and you think that's hardcore. You think your 4.99KB #[span.mfw motherfuckingwebsite](.com) 
-    | is going to get you some award to put on your damn footer as a link. 
-    | You think your default font is gonna make your website run even on a toaster.
-  p Well, guess what, you're #[span.wr WRONG], motherfucker.
-  h2 The best kick-ass website
+  nav.toc
+    p.toc-title Contents
+    ul
+      li: a(href="#header") Header
+      li: a(href="#projects") Projects
+      li: a(href="#experience") Experience
+      li: a(href="#education") Education
+      li: a(href="#certs") Certs
+      li: a(href="#other") Other
+  h1#header Aldi Pramudya
+  p.st AI, Data Science, SWE, anything but #[a(href="https://www.w3schools.com/whatis/whatis_frontenddev.asp") #[span.wr doing frontend]].
+  p.summary Semester 7 Computer Science student at #[a(href="https://ipb.ac.id" target="_blank" rel="noopener noreferrer") IPB University] (#[span.hl GPA 3.69/4.00], a number I'm legally required to mention). I build and deploy end-to-end ML systems, from data preprocessing and model benchmarking through to API development and cloud deployment. #[span.hl BNSP-Certified Data Analyst], graduate of the #[a(href="https://www.dbs.com/foundation" target="_blank" rel="noopener noreferrer") DBS Foundation] × #[a(href="https://www.dicoding.com" target="_blank" rel="noopener noreferrer") Dicoding] AI Engineering Cohort, and the person behind MoodSense, a mental health monitoring app that reads your mood better than most people do.
+  p.summary I led backend development for #[a(href="https://ittoday.web.id/" target="_blank" rel="noopener noreferrer") IT-Today 2025] (#[span.hl 2,000+ users], none of whom ever saw my CSS) and design clean-architecture APIs with #[a(href="https://fastapi.tiangolo.com" target="_blank" rel="noopener noreferrer") FastAPI] and #[a(href="https://expressjs.com" target="_blank" rel="noopener noreferrer") Express.js]. Comfortable across the stack, from training neural networks in #[a(href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer") TensorFlow]/#[a(href="https://pytorch.org" target="_blank" rel="noopener noreferrer") PyTorch] to deploying containerized services on #[a(href="https://railway.app" target="_blank" rel="noopener noreferrer") Railway] and #[a(href="https://vercel.com" target="_blank" rel="noopener noreferrer") Vercel]. And no, the frontend joke above was not a lie. #[span.invisible-text I use LaTex for most of my college assignments. It is way better than MSWord or Google Docs. Also you're not supposed to be able to read this part.]
+  blockquote
+    span Good design is as little design as possible.
+    author Some German guy
+
+  h2#projects Projects?
+  h3.project-heading
+    | Website for IT-Today 2025
+    span.project-date January 2025 – November 2025
+  p.project-meta IT-Today 2025
+  ul
+    li Led a team of 10 developers across backend, frontend, and UI/UX divisions.
+    li Built 20+ RESTful API endpoints using Express.js, Prisma ORM, and MySQL, with Cloudflare R2 for object storage.
+    li Deployed and maintained the API on a cloud platform, serving 2,000+ users during the event.
+    li Conducted code reviews and provided technical support to frontend (React) and UI/UX teams.
+    li Gathered and modeled requirements through cross-division collaboration with Executive and Competition committees.
+    li This project is still maintained, #[a(href="https://github.com/pusdatin-ittoday/ittod-web-api" target="_blank" rel="noopener noreferrer") click here to access github page].
+
+  h3.project-heading
+    | Benchmarking Machine Learning Models for SME Success Prediction
+    span.project-date May 2026 – June 2026
+  p.project-meta INFEST Data Science Competition 2026 (Finalist)
+  ul
+    li Developed an end-to-end machine learning pipeline to predict SME success using a limited and imbalanced dataset.
+    li Benchmarked Logistic Regression, SVM, Random Forest, XGBoost, Gaussian Process Classifier, and Stacking Ensemble.
+    li Implemented feature selection (Lasso), class imbalance handling (SMOTE, class weighting, undersampling), and robust evaluation using Nested Cross-Validation and permutation testing.
+    li Identified Logistic Regression with Lasso Screening as the most robust model based on MCC and multi-metric evaluation.
+    li #[a(href="https://drive.google.com/file/d/1WfvWF3xqLjho3MLbcnwu13Pvby_XCNju/view?usp=sharing" target="_blank" rel="noopener noreferrer") Click here to access paper].
+
+  h3.project-heading
+    | Schola Backend
+    span.project-date May 2026 – June 2026
+  p.project-meta Academic Project
+  ul
+    li Architected a Clean Architecture backend with 9 vertical feature slices (auth, submissions, verification, notifications, dashboard, etc.) using FastAPI and async SQLAlchemy.
+    li Designed a verifier approval pipeline with sequential/parallel workflows and HMAC-SHA256 e-signature generation for official document signing.
+    li Implemented role-based access control with 4 user roles (Mahasiswa, Dosen, Pejabat, Operator), JWT authentication, and rate limiting.
+    li Built a dynamic form template system with JSON Schema-based field definitions, supporting multiple letter types (SKA, SKPI, etc.) with auto-generated submission IDs.
+    li Integrated Cloudflare R2 for file storage, SMTP-based email notifications, and Docker containerization with auto-seeding demo data on first boot.
+    li #[a(href="https://github.com/walidan-nadilaw/Schola/tree/main/backend" target="_blank" rel="noopener noreferrer") Click here to access github page].
+
+  h2#experience Experience
+  h2#education Education
+  h2#certs Certs
+  h2#other Other
+
+
   p Let me describe the #[i real] perfect-ass website which still has the glory of the past #[span.mfw motherfuckingwebsites]:
   ul
     li Shit doesn't weigh a ton (in fact it's just 34.97 KB when the 27.83KB cat picture below is removed)
@@ -169,6 +219,9 @@ html(lang="en")
             span.separator , 
           span #[a(href=url) @#{username}]
         span  for #[a(href="https://github.com/denysvitali/thebestmotherfuckingwebsite/pulls?q=is%3Apr+is%3Aclosed+label%3A%22spell+checking%22") their help in spell checking]
+
+  footer.template-credit
+    p This portfolio is built on the #[a(href="https://github.com/denysvitali/thebestmotherfuckingwebsite" target="_blank" rel="noopener noreferrer") thebestmotherfuckingwebsite] template by #[a(href="https://denv.it/" target="_blank" rel="noopener noreferrer") Denys Vitali].
 
   input#contrast(type="checkbox")
   input#invmode(type="checkbox")
