@@ -16,9 +16,12 @@ jobs:
       with:
         node-version: 22.x
 
+    - name: Enable Corepack (use the Yarn version pinned in package.json)
+      run: corepack enable
+
     - name: Build
       run: |
-        yarn install
+        yarn install --immutable
         yarn run build
     
     - name: Upload static files as artifact
