@@ -13,17 +13,31 @@ module.exports = {
   mode: 'development',
   entry: './src/index.ts',
 
+  output: {
+    // Explicit because CleanWebpackPlugin reads compiler.options.output.path
+    // and disables itself when it's missing
+    path: path.resolve(process.cwd(), 'dist'),
+  },
+
   plugins: [
     new OptimizeCssAssetsPlugin(),
-    new CleanWebpackPlugin({
-      output: {
-        path: path.resolve(process.cwd(), 'dist'),
-      }
-    }),
+    new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({ filename: 'main.css' }),
     new CopyPlugin([
-      { from: 'src/dist/', to: './'},
+      {
+        from: 'src/dist/',
+        to: './',
+        // These are emitted by webpack above, copying them again would duplicate them.
+        // The android-chrome icons are only referenced from site.webmanifest (plain text,
+        // not processed by webpack), so they are still copied as-is.
+        ignore: [
+          'apple-touch-icon.png',
+          'favicon-16x16.png',
+          'favicon-32x32.png',
+          'site.webmanifest'
+        ],
+      },
     ]),
   ],
 
@@ -47,7 +61,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             esModule: false,
-            publicPath: '/',
+            publicPath: './',
           }
         },
         'extract-loader',
@@ -66,7 +80,7 @@ module.exports = {
           options: {
             name: 'main.css',
             esModule: false,
-            publicPath: '/',
+            publicPath: './',
           }
         },
         'extract-loader',
@@ -90,7 +104,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'index.html',
-              publicPath: '/'
+              publicPath: './'
             }
           },
           'extract-loader',
@@ -104,13 +118,24 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|webmanifest)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            esModule: false,
+            publicPath: './'
+          }
+        }]
+      },
+      {
         test: /\.(svg|jpg|webp|woff(2)?|ttf|eot)/,
         use: [{
           loader: 'file-loader',
           options: {
             name: 'static/[hash].[ext]',
             esModule: false,
-            publicPath: '/'
+            publicPath: './'
           }
         }]
       }
