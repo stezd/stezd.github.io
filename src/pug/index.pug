@@ -26,7 +26,7 @@ html(lang="en")
       li: a(href="#certs") Certs
       li: a(href="#other") Other
   h1#header Aldi Pramudya
-  p.st AI, Data Science, SWE, anything but #[a(href="https://www.w3schools.com/whatis/whatis_frontenddev.asp") #[span.wr doing frontend]].
+  p.st AI, Data Science, SWE, GIS, anything but #[a(href="https://www.w3schools.com/whatis/whatis_frontenddev.asp") #[span.wr doing frontend]].
   p.summary Semester 7 Computer Science student at #[a(href="https://ipb.ac.id" target="_blank" rel="noopener noreferrer") IPB University] (#[span.hl GPA 3.69/4.00], a number I'm legally required to mention). I build and deploy end-to-end ML systems, from data preprocessing and model benchmarking through to API development and cloud deployment. #[span.hl BNSP-Certified Data Analyst], graduate of the #[a(href="https://www.dbs.com/foundation" target="_blank" rel="noopener noreferrer") DBS Foundation] × #[a(href="https://www.dicoding.com" target="_blank" rel="noopener noreferrer") Dicoding] AI Engineering Cohort, and the person behind MoodSense, a mental health monitoring app that reads your mood better than most people do.
   p.summary I led backend development for #[a(href="https://ittoday.web.id/" target="_blank" rel="noopener noreferrer") IT-Today 2025] (#[span.hl 2,000+ users], none of whom ever saw my CSS) and design clean-architecture APIs with #[a(href="https://fastapi.tiangolo.com" target="_blank" rel="noopener noreferrer") FastAPI] and #[a(href="https://expressjs.com" target="_blank" rel="noopener noreferrer") Express.js]. Comfortable across the stack, from training neural networks in #[a(href="https://www.tensorflow.org" target="_blank" rel="noopener noreferrer") TensorFlow]/#[a(href="https://pytorch.org" target="_blank" rel="noopener noreferrer") PyTorch] to deploying containerized services on #[a(href="https://railway.app" target="_blank" rel="noopener noreferrer") Railway] and #[a(href="https://vercel.com" target="_blank" rel="noopener noreferrer") Vercel]. And no, the frontend joke above was not a lie. #[span.invisible-text I use LaTex for most of my college assignments. It is way better than MSWord or Google Docs. Also you're not supposed to be able to read this part.]
   blockquote
@@ -39,9 +39,9 @@ html(lang="en")
     span.project-date January 2025 – November 2025
   p.project-meta IT-Today 2025
   ul
-    li Led a team of 10 developers across backend, frontend, and UI/UX divisions.
-    li Built 20+ RESTful API endpoints using Express.js, Prisma ORM, and MySQL, with Cloudflare R2 for object storage.
-    li Deployed and maintained the API on a cloud platform, serving 2,000+ users during the event.
+    li Led a team of #[span.hl 10 developers] across backend, frontend, and UI/UX divisions.
+    li Built #[span.hl 20+ RESTful API endpoints] using Express.js, Prisma ORM, and MySQL, with Cloudflare R2 for object storage.
+    li Deployed and maintained the API on a cloud platform, serving #[span.hl 2,000+ users] during the event.
     li Conducted code reviews and provided technical support to frontend (React) and UI/UX teams.
     li Gathered and modeled requirements through cross-division collaboration with Executive and Competition committees.
     li This project is still maintained, #[a(href="https://github.com/pusdatin-ittoday/ittod-web-api" target="_blank" rel="noopener noreferrer") click here to access github page].
@@ -62,17 +62,128 @@ html(lang="en")
     span.project-date May 2026 – June 2026
   p.project-meta Academic Project
   ul
-    li Architected a Clean Architecture backend with 9 vertical feature slices (auth, submissions, verification, notifications, dashboard, etc.) using FastAPI and async SQLAlchemy.
+    li Architected a Clean Architecture backend with #[span.hl 9 vertical feature slices] (auth, submissions, verification, notifications, dashboard, etc.) using FastAPI and async SQLAlchemy.
     li Designed a verifier approval pipeline with sequential/parallel workflows and HMAC-SHA256 e-signature generation for official document signing.
-    li Implemented role-based access control with 4 user roles (Mahasiswa, Dosen, Pejabat, Operator), JWT authentication, and rate limiting.
+    li Implemented role-based access control with #[span.hl 4 user roles] (Mahasiswa, Dosen, Pejabat, Operator), JWT authentication, and rate limiting.
     li Built a dynamic form template system with JSON Schema-based field definitions, supporting multiple letter types (SKA, SKPI, etc.) with auto-generated submission IDs.
     li Integrated Cloudflare R2 for file storage, SMTP-based email notifications, and Docker containerization with auto-seeding demo data on first boot.
     li #[a(href="https://github.com/walidan-nadilaw/Schola/tree/main/backend" target="_blank" rel="noopener noreferrer") Click here to access github page].
 
+  h3.project-heading
+    | MoodSense – Student Mental Health Monitor
+    span.project-date April 2026 – July 2026
+  p.project-meta Coding Camp 2026 – AI Engineer Track, Dicoding × DBS Foundation
+  ul
+    li Built and deployed the complete backend (Express.js + Prisma ORM + PostgreSQL) and ML API (FastAPI) for a mental health monitoring web app as part of a #[span.hl 6-person Agile/Scrum team].
+    li Orchestrated a dual-model inference pipeline combining a BiLSTM-MHSA text sentiment model and an XGBoost/RF survey-based mood classifier, with late fusion to produce a unified mood index.
+    li Integrated LLM-powered insights (Gemini/DeepSeek) to generate personalized well-being recommendations, stress/happiness factor analysis, and #[span.hl 5-day mood forecasting] from user check-in history.
+    li Designed the PostgreSQL schema (users, mood_logs, mood_predictions, todos, settings, forecasts) and implemented JWT auth, role-based access, and RESTful APIs across #[span.hl 3 feature modules].
+    li Deployed #[span.hl all three tiers] to production: Express.js backend and ML API on Railway, React frontend on Vercel, fulfilling all MVP requirements plus mood forecasting and user settings.
+    li #[a(href="https://github.com/steezydi/moodsense" target="_blank" rel="noopener noreferrer") Click here to access github page].
+  h3.project-heading
+    | KAI Access Sentiment Analysis & Review Scraping
+    span.project-date April 2026
+  p.project-meta Certification Project
+  ul
+    li Scraped and processed #[span.hl 20,000 Google Play reviews] from the KAI Access app, then cleaned Indonesian text with slang normalization, stopword removal, and stemming using PySastrawi and NLTK.
+    li Built a #[span.hl 3-class sentiment classification] pipeline with rating-based and lexicon-assisted labeling for positive, neutral, and negative feedback.
+    li Benchmarked multiple models, including LinearSVC + TF-IDF (86.94% test accuracy on 80/20 split, 87.25% on 70/30 split), tuned TF-IDF + SVM (87.46%), BiLSTM (87.69%), and #[span.hl IndoBERT (87.84%)].
+    li Designed a TensorFlow/Keras BiLSTM network with Embedding(20,000, 256), SpatialDropout1D, 2 Bidirectional LSTM layers, dense layers, dropout regularization, class weighting, and early stopping.
+    li Used Hugging Face Transformers to fine-tune IndoBERT as the highest-performing baseline, while BiLSTM provided a strong balance between accuracy and efficiency.
+  h3.project-heading
+    | Soil Moisture Estimation using ANN from Scratch
+    span.project-date December 2025
+  p.project-meta Academic Project – Artificial Intelligence Course, IPB University
+  ul
+    li Implemented a feed-forward and backpropagation neural network #[span.hl manually using NumPy], without high-level frameworks like TensorFlow or PyTorch.
+    li Trained on #[span.hl 20,000+ environmental sensor data points], achieving #[span.hl R² of 0.7765] and MAE of 9.85% on unseen test data.
+    li Applied Batch Normalization, Dropout, and Gradient Clipping to stabilize training over #[span.hl 500 epochs].
+    li Documented architecture, methodology, and experimental results in an IEEE-format technical report.
+    li Built an interactive Streamlit web interface for real-time hyperparameter tuning and training visualization.
+    li Awarded a project score of #[span.hl 91.14/100].
+    li #[a(href="https://ipb.link/final-ai-report-ann" target="_blank" rel="noopener noreferrer") Click here to access paper].
   h2#experience Experience
+  h3.project-heading
+    | GIS Analyst and Cartographer
+    span.project-date August 2026
+  p.project-meta KKN-T Desa Pamijahan
+  ul
+    li Converted #[span.hl 32 CAD layers] of the latest village boundary data (unreadable by QGIS) into GIS-ready formats.
+    li Produced #[span.hl 7 shapefiles] covering administrative boundaries (RT, RW, dusun), rivers, roads, public facility points, and neighboring village boundaries.
+    li Repaired #[span.hl 20 invalid polygons] so no weird polygons made it into the final map.
+    li Designed and stylized the final map with clean cartographic conventions.
+    li Classified #[span.hl 3 land-use classes] (settlements, rice fields, and bare ground) from Google satellite imagery using #[span.hl Meta's Segment Anything Model (SAM)] via TerraLab's #[span.hl AI Segmentation], converting the resulting masks directly into the land-use shapefile.
+    li Calculated the total village area (#[span.hl 44,441,121 m² / 4,444.11 ha]) and per-RT area across #[span.hl 32 RT, 9 RW, and 4 dusun] for administrative planning.
+    li Received direct appreciation from the village secretary and other aparat desa for the deliverables.
+  figure.peta-desa
+    a(href="map-pamijahan-full.png", target="_blank" rel="noopener noreferrer")
+      img(src="../img/map-pamijahan-small.webp", alt="Administrative map of Desa Pamijahan", loading="lazy", width="2215", height="1477")
+    figcaption Administrative map of Desa Pamijahan (click for full resolution).
+  h3.project-heading
+    | Head of Data-Informatics Division
+    span.project-date February 2025 – December 2025
+  p.project-meta IT-Today IPB 2025
+  ul
+    li Oversaw the full development lifecycle of the IT-Today website, from requirements gathering to deployment.
+    li Managed and mentored a division of #[span.hl 10 members] across backend, frontend, and UI/UX tracks.
+    li Defined technical architecture and stack decisions for the event platform.
+    li Acted as the primary technical liaison between the division and other event committees.
+    li Automated the certificate generation pipeline, producing #[span.hl 500+ participant] and #[span.hl 60+ committee] certificates.
+    li Implemented sponsor deliverables for #[span.hl 6 sponsors] including NVIDIA, Acer, and Siloam, integrating branding assets and building sponsor-requested features such as an interactive spin wheel.
+  h3.project-heading
+    | Database Laboratory Assistant
+    span.project-date August 2025 – December 2025
+  p.project-meta IPB University
+  ul
+    li Instructed and mentored #[span.hl 84 students] across #[span.hl 2 laboratory sections] in relational database concepts, including SQL, schema design, and normalization.
+    li Evaluated practical assignments and provided technical troubleshooting, guiding students to improve database modeling and query optimization skills.
+    li Achieved a #[span.hl 100% student satisfaction] rate through effective communication and teaching methods, resulting in excellent grade outcomes across both cohorts.
+  h3.project-heading
+    | Staff of Education Division
+    span.project-date January 2025 – December 2025
+  p.project-meta Himpunan Mahasiswa Ilmu Komputer, IPB University
+  ul
+    li Produced an educational video explaining pointers in C, animated using Python's Manim library.
+    li Coordinated tutor recruitment for pre-midterm and pre-final exam sessions across #[span.hl 3 student batches].
+    li Collaborated in building a course archive for fellow students, accumulating #[span.hl 3,000+ clicks].
+    li Managed division finances as Treasurer, overseeing budgeting and expense tracking.
+    li Taught pre-midterm and pre-final tutoring sessions for Programming, Computer Graphics, and Visualization courses.
+  h3.project-heading
+    | Treasurer
+    span.project-date April 2025 – December 2025
+  p.project-meta Agriinformatics, IPB University
+  ul
+    li Managed and planned budgets across #[span.hl 7 divisions], tracking expenses and reconciling against approved allocations.
+    li Prepared financial reports for organizational accountability and end-of-term documentation.
+    li Coordinated with external sponsors for funding agreements and financial documentation.
+    li Processed fund requests from divisions, ensuring proper documentation and compliance.
+    li Navigated institutional procurement and reimbursement processes to maintain smooth cash flow across programs and events.
+  
   h2#education Education
+  h3.project-heading
+    | Bachelor in Computer Science
+    span.project-date August 2023 – Present
+  p.project-meta IPB University
+  ul
+    li Relevant coursework, all #[span.hl A]: Artificial Intelligence, Quantitative Methods, Probability Theory, Digital Image Processing, Data Mining, Information Systems, System Analysis and Design, and Software Engineering.
+    li Two #[span.hl AB] grades in Introduction to Computational Intelligence and Linear Algebra for Computing.
   h2#certs Certs
+  h3.project-heading
+    | Data Analyst Certification
+    span.project-date July 2026 – July 2029
+  p.project-meta Badan Nasional Sertifikasi Profesi (BNSP)
+  ul
+    li Credential ID: 631302120600038072026.
+  h3.project-heading
+    | Coding Camp 2026 – AI Engineer
+    span.project-date July 2026
+  p.project-meta Dicoding Indonesia × DBS Foundation
+  ul
+    li Credential ID: CC26/GRAD/XXVI-07/CACC001D6Y2605.
+    li #[a(href="https://www.linkedin.com/in/pramaldi/details/certifications/" target="_blank" rel="noopener noreferrer") Click here to see all credentials on LinkedIn].
   h2#other Other
+  ul
+    li Certified "Orang Paling Asik dan Jago", issued by the village of Pamijahan in 2026 #[small (the sekretaris desa said "oke mas, makasih ya", which counts as official certification).]
 
   footer.template-credit
     p This portfolio is built on the #[a(href="https://github.com/denysvitali/thebestmotherfuckingwebsite" target="_blank" rel="noopener noreferrer") thebestmotherfuckingwebsite] template by #[a(href="https://denv.it/" target="_blank" rel="noopener noreferrer") Denys Vitali].
